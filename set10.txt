@@ -1,0 +1,97 @@
+prime numbers
+import java.util.Scanner;
+class PrimeNum{
+public static void main(String args[])
+ {
+  Scanner sc=new Scanner(System.in);
+  System.out.println("Enter an integer:");
+  int num=sc.nextInt();
+  System.out.print("Prime numbers=");
+  for(int i=2;i<=num;i++)
+  {
+   Boolean isPrime=true;
+   for(int j=2;j<=Math.sqrt(i);j++)
+    {
+     if(i%j==0)
+      {
+       isPrime=false;
+       break;
+       }
+      }
+      if(isPrime)
+       {
+        System.out.print(i+" ");
+        }
+       }
+      }
+    }
+-------------------------------
+traffic
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+public class Traffic extends Applet implements ItemListener {
+ int columnNum;
+ String msg;
+ CheckboxGroup cg;
+ Checkbox red,yellow,green;
+ 
+ public void init() {
+ cg=new CheckboxGroup();
+ red=new Checkbox("Red",cg,true);
+ yellow=new Checkbox("Yellow",cg,true);
+ green=new Checkbox("Green",cg,true);
+ add(red);
+ add(yellow);
+ add(green);
+ red.addItemListener(this);
+ yellow.addItemListener(this);
+ green.addItemListener(this);
+ }
+public void itemStateChanged(ItemEvent e)
+{
+ if(e.getSource()==red)
+ {
+ columnNum=1;
+ }
+ else if(e.getSource()==yellow)
+ {
+ columnNum=2;
+ }
+ else{
+ columnNum=3;
+ }
+ repaint();
+ 
+}
+public void paint(Graphics g)
+{
+ g.setColor(Color.black);
+ g.fillOval(100,100,50,50);//red light
+ g.fillOval(100,170,50,50);//yellow light
+ g.fillOval(100,230,50,50);//green light
+ switch(columnNum)
+ {
+ case 1:g.setColor(Color.red);
+ g.fillOval(100,100,50,50);
+ msg="Stop";
+ g.setColor(Color.red);
+ g.drawString(msg,180,110);
+ break;
+ case 2:g.setColor(Color.yellow);
+ g.fillOval(100,170,50,50);
+ msg="Ready";
+ g.setColor(Color.red);
+ g.drawString(msg,180,180);
+ break;
+ case 3:g.setColor(Color.green);
+ g.fillOval(100,230,50,50);
+ msg="Go";
+ g.setColor(Color.red);
+ g.drawString(msg,180,240);
+ break;
+ } }
+ 
+}
+
+

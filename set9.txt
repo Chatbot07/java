@@ -1,0 +1,51 @@
+user 
+class InvalidAgeException extends Exception{
+    InvalidAgeException(String s)
+    {
+        super(s);
+    }
+}
+public class TestCustomException {
+    static void validate(int age)throws InvalidAgeException{
+        if(age<18)
+        throw new InvalidAgeException("not valid");
+        else System.out.println("welcome to vote");
+    }
+    public static void main(String[] args){
+        try{
+            validate(19);
+        }
+        catch(Exception m){
+            System.out.println("exception occured :"+m);
+        }
+        System.out.println("Custom exception decompleted");
+    }
+    
+    
+}
+---------------------------
+
+j table
+import javax.swing.*; 
+ public class TableEx
+ { 
+ JFrame f; 
+ TableEx()
+ { 
+ f=new JFrame(); 
+ String data[][]={ {"501","ravi","50000"}, 
+ {"502","raju","70000"}, 
+ {"503","ramu","90000"}}; 
+ String column[]={"ID","NAME","SALARY"}; 
+ JTable jt=new JTable(data,column); 
+ JScrollPane sp=new JScrollPane(jt); 
+ f.add(sp); 
+ f.setSize(300,400); 
+ f.setVisible(true); 
+ f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ } 
+ public static void main(String[] args) 
+ { 
+ new TableEx(); 
+ } 
+ }

@@ -1,0 +1,61 @@
+multiple inhertence
+interface printable{
+    void print();
+    
+}
+interface showable
+{
+    void show();
+}
+public class Mulltipleinheritance implements printable,showable {
+    public void print()
+        {
+            System.out.println("hello");
+
+        }
+        public void show()
+        {
+            System.out.println("welcome");
+            
+        }
+        public static void main(String[] args)
+        {
+            Mulltipleinheritance obj = new Mulltipleinheritance();
+            obj.print();
+            obj.show();
+        }
+    
+    
+}
+-------------------------------------------------------
+j tabbed pane 
+import javax.swing.*; 
+ public class TabbedPaneExample { 
+ JFrame f; 
+ TabbedPaneExample(){ 
+ f=new JFrame(); 
+ JPanel p1=new JPanel(); 
+ JPanel p2=new JPanel(); 
+ JPanel p3=new JPanel(); 
+ JButton b1=new JButton("main");
+ JButton b2=new JButton("visit");
+ JButton b3=new JButton("help");
+ p1.add(b1);
+ p2.add(b2);
+ p3.add(b3);
+ JTabbedPane tp=new JTabbedPane(); 
+ tp.setBounds(50,50,200,200); 
+ tp.add("main",p1); 
+ tp.add("visit",p2); 
+ tp.add("help",p3); 
+ f.add(tp); 
+CMR Institute of Technology Redefining Quality Education
+OOP Through Java Page 2
+ f.setSize(400,400); 
+ f.setLayout(null); 
+ f.setVisible(true); 
+ f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ } 
+ public static void main(String[] args) { 
+ new TabbedPaneExample(); 
+ } }
